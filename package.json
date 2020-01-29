@@ -1,0 +1,17 @@
+{
+  "name": "typescriptdiscrodbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "TutorialBot.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.5.1"
+  }
+}
