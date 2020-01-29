@@ -15,6 +15,6 @@ export class Bot {
             }
         });
 
-        return client.login('NjcxNzMwNTAzNjE5MTgyNjAy.XjBQbQ.i9VV4qmic6Zn0O_2azFZphikjFw')
+        return client.login(process.env['DISCORD_TOKEN']);
     }
 }
