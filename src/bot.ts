@@ -10,7 +10,9 @@ export class Bot {
         client.on('message', (message: Message) => {
             if (message.author !== client.user) {
                 if (message.mentions.users.size === 1 && message.mentions.users.some((value) => value === client.user)) {
-                    message.channel.send('I am a bot');
+                    if (message.content.includes("!time")) {
+                        message.channel.send('Now it is ' + new Date().toLocaleTimeString());
+                    }
                 }
             }
         });
