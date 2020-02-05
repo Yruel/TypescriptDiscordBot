@@ -1,8 +1,10 @@
-import {Bot} from "./bot";
+import {TimeBot} from "./time-bot";
 import {RouletteBot} from "./roulette-bot";
+import {HelloBot} from "./hello-bot";
 
-// const bot = new Bot();
-const bot = new RouletteBot();
+const bot = new HelloBot();
+// const bot = new TimeBot();
+// const bot = new RouletteBot();
 bot.run().then(() => {
     console.log('Logged in');
 });

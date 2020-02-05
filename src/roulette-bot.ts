@@ -7,11 +7,11 @@ export class RouletteBot {
             console.log('Starting bot...')
         });
 
-        client.on('message', (message: Message) => {
+        client.on('message', async (message: Message) => {
             if (message.author !== client.user) {
 
                 if (message.content.startsWith('$help')) {
-                    message.channel.send('Für Roulette: $roulette BID eingeben, wobei BID = \nblack \nred \nnumber');
+                    await message.channel.send('Für Roulette: $roulette BID eingeben, wobei BID = \nblack \nred \nnumber');
                 }
                 if (message.content.startsWith("$roulette")) {
                     const bid = message.content.split(' ')[1];
@@ -29,7 +29,7 @@ export class RouletteBot {
                         }
 
                         if (bid_param === -3) {
-                            message.channel.send('Ungültige Eingabe!');
+                            await message.channel.send('Ungültige Eingabe!');
                             return;
                         } else {
                             const result = Math.floor(Math.random() * Math.floor(37));
@@ -43,13 +43,13 @@ export class RouletteBot {
                             }
 
                             if(won) {
-                                message.channel.send('Du hast gewonnen!');
+                                await message.channel.send('Du hast gewonnen!');
                             } else {
-                                message.channel.send(`Leider verloren...! Die Zahl war ${result}`);
+                                await message.channel.send(`Leider verloren...! Die Zahl war ${result}`);
                             }
                         }
                     } else {
-                        message.channel.send('Bitte gib deine Auswahl ein!');
+                        await message.channel.send('Bitte gib deine Auswahl ein!');
                     }
                 }
             }
